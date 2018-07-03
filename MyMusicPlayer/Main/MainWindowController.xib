@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
+            <connections>
+                <outlet property="bottomView" destination="dUZ-jd-Jt5" id="yjw-Zw-caX"/>
+                <outlet property="leftView" destination="HBS-JW-9CG" id="VH5-R6-asu"/>
+                <outlet property="musicImageView" destination="IXB-a4-KsW" id="1ML-SE-5Vj"/>
+                <outlet property="playButton" destination="ZuX-Sd-W6U" id="6lj-Re-4cT"/>
+                <outlet property="progressSlider" destination="I1u-8p-oiP" id="2Jq-B2-f2H"/>
+                <outlet property="rightView" destination="H5W-hr-xxn" id="oAM-ut-fFT"/>
+                <outlet property="timeLabel" destination="0zS-lR-rta" id="Gyr-Tk-1C9"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="800" height="500"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="800" height="500"/>
+            <value key="maxSize" type="size" width="800" height="500"/>
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="HBS-JW-9CG">
+                        <rect key="frame" x="0.0" y="84" width="260" height="415"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="260" id="exw-Ef-0VX"/>
+                            <constraint firstAttribute="height" constant="415" id="s2L-Mw-HD4"/>
+                        </constraints>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="H5W-hr-xxn">
+                        <rect key="frame" x="261" y="84" width="539" height="415"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXB-a4-KsW">
+                                <rect key="frame" x="194" y="132" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="defaultbg" id="geb-Xf-VXL"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="539" id="QEb-8l-q5I"/>
+                            <constraint firstAttribute="height" constant="415" id="i3q-uS-ppo"/>
+                        </constraints>
+                    </customView>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="dUZ-jd-Jt5">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="83"/>
+                        <subviews>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-8p-oiP">
+                                <rect key="frame" x="260" y="31" width="362" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="J6h-8g-MTk" customClass="ProgressSliderCell"/>
+                                <connections>
+                                    <action selector="progressSliderAction:" target="-2" id="69M-IY-op7"/>
+                                </connections>
+                            </slider>
+                            <button toolTip="上一首歌曲" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H22-Fu-2qL">
+                                <rect key="frame" x="36" y="27" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="prev" imagePosition="only" alignment="center" state="on" inset="2" id="z5r-2R-Lwg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="previousAction:" target="-2" id="ljy-Ec-LeJ"/>
+                                </connections>
+                            </button>
+                            <button toolTip="下一首歌曲" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Rs-3M-IC4">
+                                <rect key="frame" x="187" y="27" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="next" imagePosition="only" alignment="center" state="on" inset="2" id="35W-9V-mh5">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="nextAction:" target="-2" id="cT8-Gl-m9s"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0zS-lR-rta">
+                                <rect key="frame" x="638" y="33" width="90" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="00:00 / 00:00" id="2De-3B-irD">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button toolTip="播放/暂停" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZuX-Sd-W6U">
+                                <rect key="frame" x="111" y="27" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="play" imagePosition="only" alignment="center" state="on" inset="2" id="B1N-so-GmM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="playAction:" target="-2" id="g5T-f4-ZQ5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dUZ-jd-Jt5" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="417" id="2mu-T2-COB"/>
+                    <constraint firstItem="H5W-hr-xxn" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="1" id="9od-SC-fJe"/>
+                    <constraint firstAttribute="bottom" secondItem="dUZ-jd-Jt5" secondAttribute="bottom" id="MuY-ZO-FKj"/>
+                    <constraint firstItem="HBS-JW-9CG" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="NRw-hU-GBF"/>
+                    <constraint firstAttribute="trailing" secondItem="H5W-hr-xxn" secondAttribute="trailing" id="ULM-gm-rpQ"/>
+                    <constraint firstAttribute="trailing" secondItem="dUZ-jd-Jt5" secondAttribute="trailing" id="XW8-Vj-2Ud"/>
+                    <constraint firstItem="HBS-JW-9CG" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="1" id="dlD-4n-UlY"/>
+                    <constraint firstItem="dUZ-jd-Jt5" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="exN-is-Wl4"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="281" y="233"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="defaultbg" width="1024" height="1024"/>
+        <image name="next" width="64" height="64"/>
+        <image name="play" width="64" height="64"/>
+        <image name="prev" width="64" height="64"/>
+    </resources>
+</document>
